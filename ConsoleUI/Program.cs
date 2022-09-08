@@ -2,10 +2,21 @@
 using Business.Concrete;
 using System;
 using DataAccess.Concrete.EntityFramework;
+using Entities.Concrete;
 
 class Program
 {
     static void Main(string[] args)
+    {
+        //ProductTest();
+        CategoryManager categoryManager = new CategoryManager(new EfCategoryDal());
+        foreach (var category in categoryManager.GetAll())
+        {
+            Console.WriteLine(category.CategoryName);
+        }
+    }
+
+    private static void ProductTest()
     {
         ProductManager productManager = new ProductManager(new EfProductDal());
 
@@ -21,6 +32,5 @@ class Program
         //{
         //    Console.WriteLine(product.ProductName);
         //}
-
     }
 }
