@@ -16,11 +16,11 @@ namespace DataAccess.Concrete.InMemory
         {
             _products = new List<Product>
             {
-                new Product{ ProductId=1,  CategoryId=1, ProductName="computer", UnitInStock=10, UnitPrice=100},
-                new Product{ ProductId=2,  CategoryId=2, ProductName="keyboard", UnitInStock=20, UnitPrice=10},
-                new Product{ ProductId=3,  CategoryId=2, ProductName="mouse", UnitInStock=20, UnitPrice=10},
-                new Product{ ProductId=4,  CategoryId=1, ProductName="monitor", UnitInStock=10, UnitPrice=50},
-                new Product{ ProductId=5,  CategoryId=2, ProductName="mousepad", UnitInStock=20, UnitPrice=5}
+                new Product{ ProductId=1,  CategoryId=1, ProductName="computer", UnitsInStock=10, UnitPrice=100},
+                new Product{ ProductId=2,  CategoryId=2, ProductName="keyboard", UnitsInStock=20, UnitPrice=10},
+                new Product{ ProductId=3,  CategoryId=2, ProductName="mouse", UnitsInStock=20, UnitPrice=10},
+                new Product{ ProductId=4,  CategoryId=1, ProductName="monitor", UnitsInStock=10, UnitPrice=50},
+                new Product{ ProductId=5,  CategoryId=2, ProductName="mousepad", UnitsInStock=20, UnitPrice=5}
             }.ToList();
         }
 
@@ -56,7 +56,7 @@ namespace DataAccess.Concrete.InMemory
             var productToUpdate = _products.SingleOrDefault(x => x.ProductId == product.ProductId); //by using LINQ
             productToUpdate.CategoryId = product.CategoryId;
             productToUpdate.ProductName = product.ProductName;
-            productToUpdate.UnitInStock = product.UnitInStock;
+            productToUpdate.UnitsInStock = product.UnitsInStock;
             productToUpdate.UnitPrice = product.UnitPrice;
         }
 
