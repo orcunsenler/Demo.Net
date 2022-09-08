@@ -9,6 +9,11 @@ class Program
     static void Main(string[] args)
     {
         //ProductTest();
+        //CategoryTest();
+    }
+
+    private static void CategoryTest()
+    {
         CategoryManager categoryManager = new CategoryManager(new EfCategoryDal());
         foreach (var category in categoryManager.GetAll())
         {
@@ -24,10 +29,19 @@ class Program
         {
             Console.WriteLine(product.ProductName);
         }
+
+        //ProductManager productManager = new ProductManager(new EfProductDal());
+
+        //foreach (var product in productManager.GetProductDetails())
+        //{
+        //    Console.WriteLine(product.ProductName + '/' + product.CategoryName);
+        //}
+
         //foreach (var product in productManager.GetByCategoryId(1))
         //{
         //    Console.WriteLine(product.ProductName);
         //}
+
         //foreach (var product in productManager.GetByUnitPrice(50,100))
         //{
         //    Console.WriteLine(product.ProductName);
