@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Entities.DTOs
 {
+    //Data Transformation Object
     public class ProductDetailDto : IDto
     {
         public int ProductId { get; set; }

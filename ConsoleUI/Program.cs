@@ -8,7 +8,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        //ProductTest();
+        ProductTest();
         //CategoryTest();
     }
 
@@ -25,26 +25,66 @@ class Program
     {
         ProductManager productManager = new ProductManager(new EfProductDal());
 
-        foreach (var product in productManager.GetAll())
+        var result = productManager.GetAll();
+
+        if (result.Success)
         {
-            Console.WriteLine(product.ProductName);
+            foreach (var product in result.Data)
+            {
+                Console.WriteLine(product.ProductName);
+            }
+        }
+        else
+        {
+            Console.WriteLine(result.Message);
         }
 
-        //ProductManager productManager = new ProductManager(new EfProductDal());
 
-        //foreach (var product in productManager.GetProductDetails())
+        //Data Transformation Object
+
+        //var result = productManager.GetProductDetails();
+
+        //if (result.Success)
         //{
-        //    Console.WriteLine(product.ProductName + '/' + product.CategoryName);
+        //    foreach (var product in result.Data)
+        //    {
+        //        Console.WriteLine(product.ProductName + '/' + product.CategoryName);
+        //    }
+        //}
+        //else
+        //{
+        //    Console.WriteLine(result.Message);
         //}
 
-        //foreach (var product in productManager.GetByCategoryId(1))
+
+        //var result = productManager.GetByCategoryId(1);
+
+        //if (result.Success)
         //{
-        //    Console.WriteLine(product.ProductName);
+        //    foreach (var product in result.Data)
+        //    {
+        //        Console.WriteLine(product.ProductName);
+        //    }
+        //}
+        //else
+        //{
+        //    Console.WriteLine(result.Message);
         //}
 
-        //foreach (var product in productManager.GetByUnitPrice(50,100))
+
+        //var result = productManager.GetByUnitPrice(50,100);
+
+        //if (result.Success)
         //{
-        //    Console.WriteLine(product.ProductName);
+        //    foreach (var product in result.Data)
+        //    {
+        //        Console.WriteLine(product.ProductName);
+        //    }
         //}
+        //else
+        //{
+        //    Console.WriteLine(result.Message);
+        //}
+
     }
 }
