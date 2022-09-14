@@ -23,5 +23,6 @@ namespace Business.Constants
         public static string SuccessfulLogin = "Login Successful";
         public static string UserAlreadyExists = "The User already exists";
         public static string AccessTokenCreated ="Token was created";
+        public static string UserAdded = "The user is added";
     }
 }
